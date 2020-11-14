@@ -25,11 +25,6 @@ COMPONENTS = 50
 #### Function to import all data and return 4 numpy arrays,
 #### X_train, X_test, y_train, y_test
 def import_ISIC():
-    random.seed(50)
-    RESIZED = 100
-    BATCH_SIZE = 100
-    COMPONENTS = 50
-
     #### Get all name of input images
     print("Importing input files...")
     ipath = "ISIC_2019_Training_Input"
@@ -112,7 +107,7 @@ def dimension_reduction(X_train, X_test, n_comp):
     x_test_out = pca.transform(X_test)
     return(x_train_out, x_test_out)
 
-
+#### class to output all metrics of a model
 class Classifier_Performance:
 
     def __init__(self, clf, name):
